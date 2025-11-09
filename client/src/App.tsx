@@ -9,6 +9,7 @@ import Impact from "@/pages/impact";
 import Programs from "@/pages/programs";
 import GalleryPage from "@/pages/gallery";
 import Contact from "@/pages/contact";
+import Feedback from "@/pages/feedback";
 import SectorPage from "@/pages/sector";
 import NotFound from "@/pages/not-found";
 
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/programs" component={Programs} />
       <Route path="/gallery" component={GalleryPage} />
       <Route path="/contact" component={Contact} />
+      <Route path="/feedback" component={Feedback} />
       <Route path="/sectors/:sector" component={SectorPage} />
       <Route component={NotFound} />
     </Switch>

@@ -29,7 +29,11 @@ export default function Navigation() {
   const aboutUsItems = [
     { label: 'About Us', href: '/about-us' },
     { label: 'Impact', href: '/impact' },
-    { label: 'Programs', href: '/programs' },
+  ];
+
+  const contactItems = [
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Feedback', href: '/feedback' },
   ];
 
   return (
@@ -107,11 +111,29 @@ export default function Navigation() {
               </Button>
             </Link>
 
-            <Link href="/contact">
-              <Button variant="ghost" data-testid="link-nav-contact">
-                Contact
-              </Button>
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger data-testid="dropdown-contact">
+                    Contact
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-48 p-2">
+                      {contactItems.map((item) => (
+                        <Link key={item.href} href={item.href}>
+                          <div
+                            className="block px-4 py-2 hover-elevate rounded-md text-sm cursor-pointer"
+                            data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            {item.label}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             <Link href="/contact">
               <Button
@@ -172,11 +194,16 @@ export default function Navigation() {
                 </Button>
               </Link>
 
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" className="justify-start w-full" data-testid="link-mobile-contact">
-                  Contact
-                </Button>
-              </Link>
+              <div className="space-y-1">
+                <div className="px-3 py-2 text-sm font-medium text-muted-foreground">Contact</div>
+                {contactItems.map((item) => (
+                  <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" className="justify-start pl-6 w-full" data-testid={`link-mobile-${item.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                      {item.label}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
 
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                 <Button
