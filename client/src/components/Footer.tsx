@@ -26,36 +26,36 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="bg-muted/50 border-t">
+    <footer id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white border-t border-gray-700">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl py-12 md:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <Link href="/">
               <div className="flex items-center gap-3 mb-4 hover-elevate rounded-md px-2 py-2 inline-flex cursor-pointer">
                 <img src={logoImage} alt="Shree Balaji Foundation" className="h-12 w-12" />
-                <div className="font-serif font-bold text-lg text-foreground">
+                <div className="font-serif font-bold text-lg text-white">
                   Shree Balaji
                   <br />
                   Foundation
                 </div>
               </div>
             </Link>
-            <p className="text-muted-foreground mb-4">
-              Empowering communities through education, healthcare, and sustainable development since 2015.
+            <p className="text-gray-300 mb-4">
+              Empowering communities through education, healthcare, and sustainable development since 2013.
             </p>
-            <div className="font-devanagari text-sm text-primary">
-              सर्वे भवन्तु सुखिनः
+            <div className="font-devanagari text-sm text-orange-400">
+              सर्वे भवन्तु सुखिनः | सर्वे सन्तु निरामयाः
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-white mb-4 text-lg">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
                     <span
-                      className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                      className="text-gray-300 hover:text-orange-400 transition-colors cursor-pointer"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       {link.label}
@@ -67,13 +67,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-4">We Work In</h3>
+            <h3 className="font-semibold text-white mb-4 text-lg">We Work In</h3>
             <ul className="space-y-2">
-              {sectors.map((sector) => (
+              {sectors.slice(0, 5).map((sector) => (
                 <li key={sector.label}>
                   <Link href={sector.href}>
                     <span
-                      className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                      className="text-gray-300 hover:text-orange-400 transition-colors cursor-pointer"
                       data-testid={`link-sector-${sector.label.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       {sector.label}
@@ -85,18 +85,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-white mb-4 text-lg">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-2 text-gray-300">
+                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-orange-400" />
                 <span>contact@shreebalajifoundation.org</span>
               </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-2 text-gray-300">
+                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-orange-400" />
                 <span>+91 XXXXX XXXXX</span>
               </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
+              <li className="flex items-start gap-2 text-gray-300">
+                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-orange-400" />
                 <span>Maharashtra, India</span>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="border-gray-600 hover:border-orange-400 hover:bg-orange-400/10 text-white"
                 onClick={() => window.open('https://facebook.com', '_blank')}
                 data-testid="button-social-facebook"
               >
@@ -113,7 +113,7 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="border-gray-600 hover:border-orange-400 hover:bg-orange-400/10 text-white"
                 onClick={() => window.open('https://twitter.com', '_blank')}
                 data-testid="button-social-twitter"
               >
@@ -122,7 +122,7 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="border-gray-600 hover:border-orange-400 hover:bg-orange-400/10 text-white"
                 onClick={() => window.open('https://instagram.com', '_blank')}
                 data-testid="button-social-instagram"
               >
@@ -131,7 +131,7 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-8 w-8"
+                className="border-gray-600 hover:border-orange-400 hover:bg-orange-400/10 text-white"
                 onClick={() => window.open('https://linkedin.com', '_blank')}
                 data-testid="button-social-linkedin"
               >
@@ -141,16 +141,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8">
+        <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-400">
               © {currentYear} Shree Balaji Foundation. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+              <a href="#" className="text-gray-400 hover:text-orange-400">
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground">
+              <a href="#" className="text-gray-400 hover:text-orange-400">
                 Terms of Service
               </a>
             </div>

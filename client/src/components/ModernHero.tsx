@@ -21,8 +21,8 @@ export function ModernHero() {
                 We Rise By Lifting Others
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                <span className="text-white">Welcome </span>
-                <span className="text-orange-500">Charity</span>
+                <span className="text-white">Balaji </span>
+                <span className="text-orange-500">Foundation</span>
               </h1>
             </div>
 
