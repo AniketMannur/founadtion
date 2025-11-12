@@ -8,11 +8,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import logoImage from "@assets/image_1762879919500.png";
+import bankAccountImage from "@assets/Screenshot 2025-11-12 194310_1762956842883.png";
 
 export function ModernNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDonateDialogOpen, setIsDonateDialogOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -36,7 +45,6 @@ export function ModernNavigation() {
       label: "We Work In",
       subLinks: [
         { href: "/programs", label: "Programs" },
-        { href: "/sector", label: "Sectors" },
       ],
     },
     { href: "/gallery", label: "Gallery" },
@@ -134,12 +142,34 @@ export function ModernNavigation() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3 animate-fade-in-down delay-500">
-            <Button
-              variant="default"
-              data-testid="button-donate"
-            >
-              Donate Now
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-white"
+                  data-testid="button-donate"
+                >
+                  Donate Now
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-center mb-4">
+                    Support Our Cause
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col items-center gap-4">
+                  <img 
+                    src={bankAccountImage} 
+                    alt="Bank Account Details" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                    data-testid="img-bank-account"
+                  />
+                  <p className="text-muted-foreground text-center">
+                    Your generous contribution helps us continue our mission of serving communities.
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           <Button
@@ -197,9 +227,11 @@ export function ModernNavigation() {
             })}
             <div className="pt-4 space-y-2 border-t border-gray-200 dark:border-gray-800">
               <Button
-                variant="default"
-                className="w-full"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full bg-primary hover:bg-primary/90 text-white"
+                onClick={() => {
+                  setIsDonateDialogOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
                 data-testid="button-mobile-donate"
               >
                 Donate Now
@@ -208,6 +240,27 @@ export function ModernNavigation() {
           </div>
         </div>
       )}
+
+      <Dialog open={isDonateDialogOpen} onOpenChange={setIsDonateDialogOpen}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center mb-4">
+              Support Our Cause
+            </DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center gap-4">
+            <img 
+              src={bankAccountImage} 
+              alt="Bank Account Details" 
+              className="w-full h-auto rounded-lg shadow-lg"
+              data-testid="img-bank-account"
+            />
+            <p className="text-muted-foreground text-center">
+              Your generous contribution helps us continue our mission of serving communities.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 }

@@ -29,12 +29,12 @@ export default function Footer() {
     <footer id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white border-t border-gray-700">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl py-12 md:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+          <div className="pr-4">
             <Link href="/">
               <div className="flex items-center gap-3 mb-4 hover-elevate rounded-md px-2 py-2 inline-flex cursor-pointer">
                 <img src={logoImage} alt="Shree Balaji Foundation" className="h-16 w-16" />
                 <div className="font-serif font-bold text-lg text-white whitespace-nowrap">
-                  Shree Balaji Foundation
+                  Shree Balaji<br />Foundation
                 </div>
               </div>
             </Link>

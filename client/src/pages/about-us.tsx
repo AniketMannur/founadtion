@@ -124,7 +124,7 @@ export default function AboutUs() {
 
       <AnimatedSection background="white" delay={200}>
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-gradient-to-br from-primary to-primary/80 text-white hover-elevate">
+          <Card className="p-8 bg-gradient-to-br from-green-500 to-green-600 text-white hover-elevate">
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-white/90 text-lg leading-relaxed">
               To make a positive impact on society through our multifaceted approach focusing on Health/Medical, 
