@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { GraduationCap, Heart, Users, Building2, Wrench, Leaf, ArrowRight } from 'lucide-react';
 
-import eduImage from '@assets/generated_images/Students_collaborative_learning_education_4ac6836b.png';
+import eduImage from '@assets/education_program.png';
 import healthImage from '@assets/generated_images/Healthcare_medical_checkup_scene_932d6355.png';
 import womenImage from '@assets/generated_images/Women_empowerment_workshop_session_f072e1f6.png';
 import communityImage from '@assets/generated_images/Community_development_project_teamwork_58719fa2.png';

@@ -145,7 +145,7 @@ export function ModernNavigation() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button
-                  className="bg-primary hover:bg-primary/90 text-white"
+                  className="bg-orange-500 hover:bg-orange-600 text-white"
                   data-testid="button-donate"
                 >
                   Donate Now
@@ -227,7 +227,7 @@ export function ModernNavigation() {
             })}
             <div className="pt-4 space-y-2 border-t border-gray-200 dark:border-gray-800">
               <Button
-                className="w-full bg-primary hover:bg-primary/90 text-white"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white"
                 onClick={() => {
                   setIsDonateDialogOpen(true);
                   setIsMobileMenuOpen(false);
