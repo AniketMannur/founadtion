@@ -6,7 +6,7 @@ export function ModernHero() {
       <img
         src={heroImage}
         alt="Shree Balaji Foundation"
-        className="w-full h-[600px] md:h-[700px] lg:h-[800px] object-cover"
+        className="w-full h-[600px] md:h-[700px] lg:h-[800px] object-cover animate-float-hero"
         data-testid="img-hero"
       />
     </div>

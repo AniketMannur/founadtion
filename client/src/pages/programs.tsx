@@ -18,6 +18,7 @@ export default function ProgramsPage() {
     {
       title: 'Quality Education',
       category: 'Education',
+      sectorKey: 'education',
       description: 'Providing access to quality education and learning resources for underprivileged children. We focus on holistic development through innovative teaching methods.',
       image: eduImage,
       icon: GraduationCap,
@@ -26,6 +27,7 @@ export default function ProgramsPage() {
     {
       title: 'Healthcare Services',
       category: 'Healthcare',
+      sectorKey: 'health',
       description: 'Free medical camps and healthcare services for communities in need. Regular health checkups and awareness programs for preventive care.',
       image: healthImage,
       icon: Heart,
@@ -34,6 +36,7 @@ export default function ProgramsPage() {
     {
       title: 'Women Empowerment',
       category: 'Empowerment',
+      sectorKey: 'women-empowerment',
       description: 'Skill development and empowerment programs for women and girls. Creating opportunities for economic independence and leadership.',
       image: womenImage,
       icon: Users,
@@ -42,6 +45,7 @@ export default function ProgramsPage() {
     {
       title: 'Community Development',
       category: 'Community',
+      sectorKey: 'community-development',
       description: 'Building sustainable communities through infrastructure and social programs. Strengthening local institutions and community bonds.',
       image: communityImage,
       icon: Building2,
@@ -50,6 +54,7 @@ export default function ProgramsPage() {
     {
       title: 'Skill Training',
       category: 'Training',
+      sectorKey: 'skill-development',
       description: 'Vocational training programs to enhance employability and self-reliance. Industry-aligned courses for better job prospects.',
       image: skillImage,
       icon: Wrench,
@@ -58,6 +63,7 @@ export default function ProgramsPage() {
     {
       title: 'Environmental Initiatives',
       category: 'Environment',
+      sectorKey: 'environment-conservation',
       description: 'Promoting environmental awareness and sustainable practices in communities. Tree plantation drives and waste management programs.',
       image: envImage,
       icon: Leaf,
@@ -120,7 +126,7 @@ export default function ProgramsPage() {
                   <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                     {program.description}
                   </p>
-                  <Link href={`/sectors/${program.category.toLowerCase()}`}>
+                  <Link href={`/sectors/${program.sectorKey}`}>
                     <Button variant="ghost" className="group">
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -144,15 +150,6 @@ export default function ProgramsPage() {
             <Link href="/contact">
               <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 Contact Us
-              </Button>
-            </Link>
-            <Link href="/feedback">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/20"
-              >
-                Share Feedback
               </Button>
             </Link>
           </div>

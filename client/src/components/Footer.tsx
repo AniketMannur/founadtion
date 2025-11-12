@@ -32,11 +32,9 @@ export default function Footer() {
           <div>
             <Link href="/">
               <div className="flex items-center gap-3 mb-4 hover-elevate rounded-md px-2 py-2 inline-flex cursor-pointer">
-                <img src={logoImage} alt="Shree Balaji Foundation" className="h-12 w-12" />
-                <div className="font-serif font-bold text-lg text-white">
-                  Shree Balaji
-                  <br />
-                  Foundation
+                <img src={logoImage} alt="Shree Balaji Foundation" className="h-16 w-16" />
+                <div className="font-serif font-bold text-lg text-white whitespace-nowrap">
+                  Shree Balaji Foundation
                 </div>
               </div>
             </Link>
@@ -142,8 +140,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-sm text-gray-400 text-center">
               © {currentYear} Shree Balaji Foundation. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">

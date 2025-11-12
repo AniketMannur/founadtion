@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { PageLayout } from '@/components/PageLayout';
+import { PageHero } from '@/components/PageHero';
+import { AnimatedSection } from '@/components/AnimatedSection';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, Star } from 'lucide-react';
@@ -35,25 +36,14 @@ export default function Feedback() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <div className="bg-primary/10 py-16 md:py-20">
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="max-w-2xl mx-auto text-center">
-              <MessageSquare className="h-16 w-16 mx-auto mb-6 text-primary" />
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-                Share Your Feedback
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Your opinions help us improve our programs and services. We value your feedback and suggestions.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl py-12 md:py-16">
-          <div className="grid md:grid-cols-2 gap-12">
+    <PageLayout>
+      <PageHero
+        title="Share Your Feedback"
+        description="Your opinions help us improve our programs and services. We value your feedback and suggestions."
+        tagline="We're Listening"
+      />
+      <AnimatedSection background="white">
+        <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-serif font-bold mb-6">Why Your Feedback Matters</h2>
               <div className="space-y-6">
@@ -198,9 +188,7 @@ export default function Feedback() {
               </form>
             </Card>
           </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+      </AnimatedSection>
+    </PageLayout>
   );
 }

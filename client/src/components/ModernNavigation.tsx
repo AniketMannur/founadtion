@@ -40,7 +40,13 @@ export function ModernNavigation() {
       ],
     },
     { href: "/gallery", label: "Gallery" },
-    { href: "/contact", label: "Contact" },
+    {
+      label: "Contact",
+      subLinks: [
+        { href: "/contact", label: "Contact Us" },
+        { href: "/feedback", label: "Share Feedback" },
+      ],
+    },
   ];
 
   return (
