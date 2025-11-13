@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { GraduationCap, Heart, Users, Building2, Wrench, Leaf, ArrowRight } from 'lucide-react';
 
-import eduImage from '@assets/education_program.png';
+
 import healthImage from '@assets/image_1763015102424.png';
 import womenImage from '@assets/image_1763015026425.png';
 import communityImage from '@assets/image_1763015571500.png';
@@ -20,7 +20,7 @@ export default function ProgramsPage() {
       category: 'Education',
       sectorKey: 'education',
       description: 'Providing access to quality education and learning resources for underprivileged children. We focus on holistic development through innovative teaching methods.',
-      image: eduImage,
+     
       icon: GraduationCap,
       color: 'from-blue-500 to-blue-600',
     },

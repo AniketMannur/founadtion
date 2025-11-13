@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { Card } from '@/components/ui/card';
 import { GraduationCap, Heart, Palette, Building2, Sprout, Briefcase, Users, HandHeart, CheckCircle2 } from 'lucide-react';
 
-import eduImage from '@assets/image_1762880339582.png';
+import eduImage from '@assets/education_program.png';
 import healthImage from '@assets/generated_images/Healthcare_medical_checkup_scene_932d6355.png';
 import womenImage from '@assets/generated_images/Women_empowerment_workshop_session_f072e1f6.png';
 import communityImage from '@assets/generated_images/Community_development_project_teamwork_58719fa2.png';
