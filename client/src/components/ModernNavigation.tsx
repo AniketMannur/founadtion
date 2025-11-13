@@ -49,6 +49,15 @@ export function ModernNavigation() {
     },
     { href: "/gallery", label: "Gallery" },
     {
+      label: "Campaign",
+      subLinks: [
+        { href: "/campaigns/medical-camp", label: "Medical Camp" },
+        { href: "/campaigns/road-safety-camp", label: "Road Safety Camp" },
+        { href: "/campaigns/blood-donation-camp", label: "Blood Donation Camp" },
+        { href: "/campaigns/cancer-initiative-camp", label: "Cancer Initiative Camp" },
+      ],
+    },
+    {
       label: "Contact",
       subLinks: [
         { href: "/contact", label: "Contact Us" },

@@ -36,6 +36,13 @@ export default function Navigation() {
     { label: 'Feedback', href: '/feedback' },
   ];
 
+  const campaignItems = [
+    { label: 'Medical Camp', href: '/campaigns/medical-camp' },
+    { label: 'Road Safety Camp', href: '/campaigns/road-safety-camp' },
+    { label: 'Blood Donation Camp', href: '/campaigns/blood-donation-camp' },
+    { label: 'Cancer Initiative Camp', href: '/campaigns/cancer-initiative-camp' },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -110,6 +117,30 @@ export default function Navigation() {
                 Gallery
               </Button>
             </Link>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger data-testid="dropdown-campaign">
+                    Campaign
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-56 p-2">
+                      {campaignItems.map((item) => (
+                        <Link key={item.href} href={item.href}>
+                          <div
+                            className="block px-4 py-2 hover-elevate rounded-md text-sm cursor-pointer"
+                            data-testid={`link-campaign-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            {item.label}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             <NavigationMenu>
               <NavigationMenuList>
@@ -193,6 +224,17 @@ export default function Navigation() {
                   Gallery
                 </Button>
               </Link>
+
+              <div className="space-y-1">
+                <div className="px-3 py-2 text-sm font-medium text-muted-foreground">Campaign</div>
+                {campaignItems.map((item) => (
+                  <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" className="justify-start pl-6 w-full" data-testid={`link-mobile-campaign-${item.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                      {item.label}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
 
               <div className="space-y-1">
                 <div className="px-3 py-2 text-sm font-medium text-muted-foreground">Contact</div>

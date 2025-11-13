@@ -7,11 +7,11 @@ import { Link } from 'wouter';
 import { GraduationCap, Heart, Users, Building2, Wrench, Leaf, ArrowRight } from 'lucide-react';
 
 import eduImage from '@assets/education_program.png';
-import healthImage from '@assets/generated_images/Healthcare_medical_checkup_scene_932d6355.png';
-import womenImage from '@assets/generated_images/Women_empowerment_workshop_session_f072e1f6.png';
-import communityImage from '@assets/generated_images/Community_development_project_teamwork_58719fa2.png';
-import skillImage from '@assets/generated_images/Technical_skill_training_center_a91ec481.png';
-import envImage from '@assets/generated_images/Environmental_awareness_tree_planting_ff02a864.png';
+import healthImage from '@assets/image_1763015102424.png';
+import womenImage from '@assets/image_1763015026425.png';
+import communityImage from '@assets/image_1763015571500.png';
+import skillImage from '@assets/image_1763015445729.png';
+import envImage from '@assets/image_1763015495034.png';
 
 export default function ProgramsPage() {
   const programs = [
