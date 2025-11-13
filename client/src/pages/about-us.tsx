@@ -43,7 +43,7 @@ export default function AboutUs() {
     <PageLayout>
       <PageHero
         title="About Shree Balaji Foundation"
-        subtitle="Making a Difference Since 2013"
+        subtitle="Making a Difference Since 2015"
         description="Committed to creating positive impact through education, healthcare, women empowerment, and community development programs across India."
         tagline="Our Story"
         primaryCta={{ label: 'View Our Programs', href: '/programs' }}
@@ -56,7 +56,7 @@ export default function AboutUs() {
             Our Journey
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-3xl mx-auto">
-            Established in 2013, Shree Balaji Foundation has been at the forefront of social change,
+            Established in 2015, Shree Balaji Foundation has been at the forefront of social change,
             transforming lives through dedicated service and innovative programs.
           </p>
         </div>

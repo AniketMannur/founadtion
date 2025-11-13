@@ -3,7 +3,7 @@ import { PageLayout } from '@/components/PageLayout';
 import { PageHero } from '@/components/PageHero';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Card } from '@/components/ui/card';
-import { Stethoscope, Car, Droplet, Ribbon, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Stethoscope, Car, Droplet, Ribbon, CheckCircle2, ChevronLeft, ChevronRight, Heart, Users, Target, TrendingUp } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -24,29 +24,70 @@ import medicalCamp12 from '@assets/WhatsApp Image 2025-11-12 at 8.26.38 PM_17630
 import medicalCamp13 from '@assets/WhatsApp Image 2025-11-12 at 8.26.37 PM_1763017196332.jpeg';
 import medicalCamp14 from '@assets/WhatsApp Image 2025-11-12 at 8.26.36 PM_1763017196333.jpeg';
 
+// Import road safety images (first 6 images)
+import roadSafety1 from '@assets/image_1763020140397.png';
+import roadSafety2 from '@assets/image_1763020149360.png';
+import roadSafety3 from '@assets/image_1763020158113.png';
+import roadSafety4 from '@assets/image_1763020167481.png';
+import roadSafety5 from '@assets/image_1763020178497.png';
+import roadSafety6 from '@assets/image_1763020192303.png';
+
+// Import blood donation images (images 7-9)
+import bloodDonation1 from '@assets/image_1763020218360.png';
+import bloodDonation2 from '@assets/image_1763020228063.png';
+import bloodDonation3 from '@assets/image_1763020237038.png';
+
+// Import cancer initiative images (images 10-18)
+import cancerInitiative1 from '@assets/image_1763020416962.png';
+import cancerInitiative2 from '@assets/image_1763020424584.png';
+import cancerInitiative3 from '@assets/image_1763020431855.png';
+import cancerInitiative4 from '@assets/image_1763020438630.png';
+import cancerInitiative5 from '@assets/image_1763020446523.png';
+import cancerInitiative6 from '@assets/image_1763020461328.png';
+import cancerInitiative7 from '@assets/image_1763020468868.png';
+import cancerInitiative8 from '@assets/image_1763020476991.png';
+import cancerInitiative9 from '@assets/image_1763020484975.png';
+import cancerInitiative10 from '@assets/image_1763020496404.png';
+
 const medicalCampImages = [
-  medicalCamp1,
-  medicalCamp2,
-  medicalCamp3,
-  medicalCamp4,
-  medicalCamp5,
-  medicalCamp6,
-  medicalCamp7,
-  medicalCamp8,
-  medicalCamp9,
-  medicalCamp10,
-  medicalCamp11,
-  medicalCamp12,
-  medicalCamp13,
-  medicalCamp14,
+  medicalCamp1, medicalCamp2, medicalCamp3, medicalCamp4, medicalCamp5, medicalCamp6,
+  medicalCamp7, medicalCamp8, medicalCamp9, medicalCamp10, medicalCamp11, medicalCamp12,
+  medicalCamp13, medicalCamp14,
 ];
 
-const campaignData: Record<string, { title: string; icon: any; description: string; details: string[]; color: string }> = {
+const roadSafetyImages = [
+  roadSafety1, roadSafety2, roadSafety3, roadSafety4, roadSafety5, roadSafety6,
+];
+
+const bloodDonationImages = [
+  bloodDonation1, bloodDonation2, bloodDonation3,
+];
+
+const cancerInitiativeImages = [
+  cancerInitiative1, cancerInitiative2, cancerInitiative3, cancerInitiative4, cancerInitiative5,
+  cancerInitiative6, cancerInitiative7, cancerInitiative8, cancerInitiative9, cancerInitiative10,
+];
+
+const campaignData: Record<string, { 
+  title: string; 
+  icon: any; 
+  description: string; 
+  longDescription: string;
+  details: string[]; 
+  color: string;
+  stats: { label: string; value: string; icon: any }[];
+}> = {
   'medical-camp': {
     title: 'Medical Camp',
     icon: Stethoscope,
     description: 'Providing free medical checkups and healthcare services to underserved communities through organized medical camps.',
+    longDescription: 'Our medical camps are comprehensive healthcare initiatives that bring quality medical services directly to communities in need. Since 2015, we have organized numerous camps across Maharashtra, providing free health checkups, medicines, and specialist consultations to thousands of beneficiaries.',
     color: 'from-blue-500 to-blue-600',
+    stats: [
+      { label: 'Patients Served', value: '10,000+', icon: Users },
+      { label: 'Camps Organized', value: '50+', icon: Target },
+      { label: 'Lives Impacted', value: '25,000+', icon: Heart },
+    ],
     details: [
       'Free health checkups and consultations',
       'Distribution of free medicines',
@@ -62,7 +103,13 @@ const campaignData: Record<string, { title: string; icon: any; description: stri
     title: 'Road Safety Camp',
     icon: Car,
     description: 'Creating awareness about road safety and promoting safe driving practices to reduce accidents and save lives.',
+    longDescription: 'Road safety is a critical concern in our communities. Through our road safety camps, we educate students, drivers, and citizens about traffic rules, safe driving practices, and the importance of following road safety regulations. Our interactive sessions and demonstrations have reached thousands of individuals across different age groups.',
     color: 'from-orange-500 to-orange-600',
+    stats: [
+      { label: 'People Educated', value: '15,000+', icon: Users },
+      { label: 'Safety Sessions', value: '75+', icon: Target },
+      { label: 'Communities Reached', value: '40+', icon: TrendingUp },
+    ],
     details: [
       'Road safety awareness sessions',
       'Traffic rules and regulations education',
@@ -78,7 +125,13 @@ const campaignData: Record<string, { title: string; icon: any; description: stri
     title: 'Blood Donation Camp',
     icon: Droplet,
     description: 'Organizing blood donation drives to save lives and maintain adequate blood supply for emergency medical needs.',
+    longDescription: 'Blood donation is one of the noblest acts of service to humanity. Our regular blood donation camps have created a network of voluntary donors who contribute selflessly to save lives. Working in partnership with blood banks and hospitals, we ensure safe collection, testing, and distribution of blood for those in critical need.',
     color: 'from-red-500 to-red-600',
+    stats: [
+      { label: 'Units Collected', value: '5,000+', icon: Droplet },
+      { label: 'Donation Drives', value: '60+', icon: Target },
+      { label: 'Lives Saved', value: '15,000+', icon: Heart },
+    ],
     details: [
       'Voluntary blood donation drives',
       'Health screening before donation',
@@ -94,7 +147,13 @@ const campaignData: Record<string, { title: string; icon: any; description: stri
     title: 'Cancer Initiative Camp',
     icon: Ribbon,
     description: 'Raising awareness about cancer prevention, early detection, and providing support to cancer patients and their families.',
+    longDescription: 'Cancer awareness and early detection can save lives. Our cancer initiative camps focus on educating communities about cancer prevention, organizing screening programs, and providing support to cancer patients. We collaborate with medical institutions to ensure that underprivileged patients receive the care and assistance they need during their treatment journey.',
     color: 'from-pink-500 to-pink-600',
+    stats: [
+      { label: 'Screenings Conducted', value: '3,000+', icon: Users },
+      { label: 'Awareness Programs', value: '40+', icon: Target },
+      { label: 'Families Supported', value: '500+', icon: Heart },
+    ],
     details: [
       'Cancer awareness and education',
       'Early detection screening programs',
@@ -108,8 +167,13 @@ const campaignData: Record<string, { title: string; icon: any; description: stri
   },
 };
 
-// Carousel Component
-function MedicalCampCarousel() {
+// Generic Carousel Component
+interface CarouselProps {
+  images: string[];
+  title: string;
+}
+
+function ImageCarousel({ images, title }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -139,16 +203,16 @@ function MedicalCampCarousel() {
 
     const autoplayInterval = setInterval(() => {
       emblaApi.scrollNext();
-    }, 4000); // Change slide every 4 seconds
+    }, 4000);
 
     return () => clearInterval(autoplayInterval);
   }, [emblaApi]);
 
   return (
     <div className="relative max-w-5xl mx-auto">
-      <div className="overflow-hidden rounded-2xl" ref={emblaRef} data-testid="carousel-medical-camp">
+      <div className="overflow-hidden rounded-2xl" ref={emblaRef} data-testid={`carousel-${title.toLowerCase().replace(/\s+/g, '-')}`}>
         <div className="flex">
-          {medicalCampImages.map((image, index) => (
+          {images.map((image, index) => (
             <div
               key={index}
               className="flex-[0_0_100%] min-w-0 px-4"
@@ -157,7 +221,7 @@ function MedicalCampCarousel() {
               <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-2xl">
                 <img
                   src={image}
-                  alt={`Medical Camp Activity ${index + 1}`}
+                  alt={`${title} ${index + 1}`}
                   className="w-full h-full object-cover"
                   data-testid={`carousel-image-${index}`}
                 />
@@ -191,7 +255,7 @@ function MedicalCampCarousel() {
 
       {/* Dots Indicator */}
       <div className="flex justify-center gap-2 mt-6" data-testid="carousel-dots">
-        {medicalCampImages.map((_, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
@@ -229,6 +293,24 @@ export default function CampaignPage() {
 
   const Icon = campaign.icon;
 
+  // Get images based on campaign type
+  const getCarouselImages = () => {
+    switch (campaignId) {
+      case 'medical-camp':
+        return medicalCampImages;
+      case 'road-safety-camp':
+        return roadSafetyImages;
+      case 'blood-donation-camp':
+        return bloodDonationImages;
+      case 'cancer-initiative-camp':
+        return cancerInitiativeImages;
+      default:
+        return [];
+    }
+  };
+
+  const carouselImages = getCarouselImages();
+
   return (
     <PageLayout>
       <PageHero
@@ -242,23 +324,43 @@ export default function CampaignPage() {
 
       <AnimatedSection background="white">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${campaign.color} mb-6`}>
+          <div className="space-y-6">
+            <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${campaign.color} mb-6 opacity-0 animate-fade-in`}>
               <Icon className="w-12 h-12 text-white" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white opacity-0 animate-slide-in-left delay-100">
               About This Campaign
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed opacity-0 animate-slide-in-left delay-200">
               {campaign.description}
             </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Through this initiative, we aim to create lasting impact in communities by providing
-              essential services and raising awareness. Join us in our mission to make a difference.
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed opacity-0 animate-slide-in-left delay-300">
+              {campaign.longDescription}
             </p>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-3 gap-4 pt-6">
+              {campaign.stats.map((stat, index) => {
+                const StatIcon = stat.icon;
+                return (
+                  <Card 
+                    key={stat.label} 
+                    className={`p-4 text-center opacity-0 animate-fade-in-up delay-${(index + 4) * 100}`}
+                  >
+                    <StatIcon className={`w-6 h-6 mx-auto mb-2 bg-gradient-to-br ${campaign.color} bg-clip-text text-transparent`} />
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                      {stat.label}
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
 
-          <Card className="p-8">
+          <Card className="p-8 opacity-0 animate-fade-in-up delay-200">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Campaign Highlights
             </h3>
@@ -267,7 +369,7 @@ export default function CampaignPage() {
                 <div
                   key={index}
                   className="flex items-start gap-3 opacity-0 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${(index + 8) * 100}ms` }}
                 >
                   <CheckCircle2 className={`w-5 h-5 mt-0.5 flex-shrink-0 bg-gradient-to-br ${campaign.color} bg-clip-text text-transparent`} />
                   <span className="text-gray-600 dark:text-gray-400">{detail}</span>
@@ -278,27 +380,30 @@ export default function CampaignPage() {
         </div>
       </AnimatedSection>
 
-      {/* Medical Camp Image Carousel - Only shown for medical-camp */}
-      {campaignId === 'medical-camp' && (
+      {/* Image Carousel Section */}
+      {carouselImages.length > 0 && (
         <AnimatedSection background="gray" delay={100}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Medical Camp in Action
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 opacity-0 animate-fade-in">
+              Our {campaign.title} in Action
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-              Witness the impact of our medical camps through these moments captured during our healthcare initiatives across communities.
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto opacity-0 animate-fade-in-up delay-100">
+              Witness the impact of our {campaign.title.toLowerCase()} through these moments captured during our initiatives across communities.
             </p>
           </div>
-          <MedicalCampCarousel />
+          <div className="opacity-0 animate-fade-in-up delay-200">
+            <ImageCarousel images={carouselImages} title={campaign.title} />
+          </div>
         </AnimatedSection>
       )}
 
-      <AnimatedSection background="gray" delay={200}>
-        <div className={`bg-gradient-to-r ${campaign.color} rounded-2xl p-8 md:p-12 text-white text-center`}>
+      <AnimatedSection background="white" delay={200}>
+        <div className={`bg-gradient-to-r ${campaign.color} rounded-2xl p-8 md:p-12 text-white text-center opacity-0 animate-fade-in-up`}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Campaign</h2>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Your participation and support can make a real difference. Whether you volunteer, donate,
-            or simply spread the word, every contribution helps us achieve our goals.
+            or simply spread the word, every contribution helps us achieve our goals and create lasting
+            positive change in communities across Maharashtra.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact">

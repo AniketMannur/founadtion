@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-300 mb-4">
-              Empowering communities through education, healthcare, and sustainable development since 2013.
+              Empowering communities through education, healthcare, and sustainable development since 2015.
             </p>
             <div className="font-devanagari text-sm text-secondary">
               सर्वे भवन्तु सुखिनः | सर्वे सन्तु निरामयाः
@@ -87,15 +87,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-300">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-secondary" />
-                <span>contact@shreebalajifoundation.org</span>
+                <span>contact@shreebalajifoundation.org.in</span>
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-secondary" />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 8087678977</span>
               </li>
               <li className="flex items-start gap-2 text-gray-300">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-secondary" />
-                <span>Maharashtra, India</span>
+                <span>Pune, Maharashtra, India</span>
               </li>
             </ul>
             <div className="flex gap-2 mt-4">

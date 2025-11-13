@@ -102,7 +102,7 @@ export function AboutSection() {
               About Shree Balaji Foundation
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4 max-w-4xl mx-auto text-center">
-              Established in 2013, Shree Balaji Foundation is a registered non-profit organization 
+              Established in 2015, Shree Balaji Foundation is a registered non-profit organization 
               committed to making a meaningful impact in the areas of Health, Education, Skill Development, 
               Women Empowerment, Community Development, and Social Development.
             </p>

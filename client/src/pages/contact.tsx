@@ -21,19 +21,19 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@shreebalajifoundation.org',
+      value: 'contact@shreebalajifoundation.org.in',
       description: 'Send us an email anytime',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 XXXXX XXXXX',
+      value: '+91 8087678977',
       description: 'Mon-Fri from 9am to 6pm',
     },
     {
       icon: MapPin,
       title: 'Address',
-      value: 'Maharashtra, India',
+      value: 'Pune, Maharashtra, India',
       description: 'Visit our office',
     },
     {

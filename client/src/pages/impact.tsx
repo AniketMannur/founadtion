@@ -52,7 +52,7 @@ export default function Impact() {
 
   const milestones = [
     {
-      year: '2013',
+      year: '2015',
       title: 'Foundation Established',
       description: 'Shree Balaji Foundation was founded with a vision to create positive social impact',
     },
@@ -78,7 +78,7 @@ export default function Impact() {
       <PageHero
         title="Our Impact"
         subtitle="10 Years of Transformation"
-        description="Since 2013, we've been transforming lives and building stronger communities through dedicated service and innovative programs."
+        description="Since 2015, we've been transforming lives and building stronger communities through dedicated service and innovative programs."
         tagline="Making a Difference"
         showStats={true}
       />

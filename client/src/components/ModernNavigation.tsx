@@ -135,9 +135,7 @@ export function ModernNavigation() {
                   <Button
                     variant="ghost"
                     className={`animate-fade-in-down delay-${(index + 1) * 100} ${
-                      location === link.href
-                        ? "bg-primary/10 text-primary dark:text-primary"
-                        : isScrolled
+                      isScrolled
                         ? "text-gray-700 dark:text-gray-200"
                         : "text-white hover:text-white"
                     }`}
@@ -221,11 +219,7 @@ export function ModernNavigation() {
               return (
                 <Link key={link.href} href={link.href}>
                   <div
-                    className={`px-4 py-2 rounded-md cursor-pointer hover-elevate ${
-                      location === link.href
-                        ? "bg-primary/10 text-primary dark:text-primary"
-                        : "text-gray-700 dark:text-gray-200"
-                    }`}
+                    className="px-4 py-2 rounded-md cursor-pointer hover-elevate text-gray-700 dark:text-gray-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid={`link-mobile-${link.label.toLowerCase()}`}
                   >
