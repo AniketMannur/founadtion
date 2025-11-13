@@ -218,11 +218,12 @@ function ImageCarousel({ images, title }: CarouselProps) {
               className="flex-[0_0_100%] min-w-0 px-4"
               data-testid={`carousel-slide-${index}`}
             >
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center" style={{ minHeight: '500px', maxHeight: '600px' }}>
                 <img
                   src={image}
                   alt={`${title} ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="max-w-full max-h-[600px] w-auto h-auto object-contain"
+                  loading="eager"
                   data-testid={`carousel-image-${index}`}
                 />
               </div>
