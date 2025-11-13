@@ -213,8 +213,8 @@ function ImageCarousel({ images, title }: CarouselProps) {
   }, [emblaApi]);
 
   return (
-    <div className="relative max-w-6xl mx-auto">
-      <div className="overflow-hidden" ref={emblaRef} data-testid={`carousel-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <div className="relative max-w-6xl mx-auto px-4">
+      <div className="overflow-hidden rounded-2xl shadow-2xl" ref={emblaRef} data-testid={`carousel-${title.toLowerCase().replace(/\s+/g, '-')}`}>
         <div className="flex">
           {images.map((image, index) => (
             <div
@@ -222,11 +222,11 @@ function ImageCarousel({ images, title }: CarouselProps) {
               className="flex-[0_0_100%] min-w-0"
               data-testid={`carousel-slide-${index}`}
             >
-              <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center" style={{ height: '500px' }}>
+              <div className="relative bg-gray-900 dark:bg-gray-950" style={{ paddingBottom: '56.25%' }}>
                 <img
                   src={image}
                   alt={`${title} ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                   loading="eager"
                   data-testid={`carousel-image-${index}`}
                 />
@@ -241,7 +241,7 @@ function ImageCarousel({ images, title }: CarouselProps) {
         size="icon"
         variant="outline"
         onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg z-10"
+        className="absolute left-8 top-1/2 -translate-y-1/2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-xl border-2 border-white/50 z-10"
         data-testid="button-carousel-prev"
         aria-label="Previous slide"
       >
@@ -251,7 +251,7 @@ function ImageCarousel({ images, title }: CarouselProps) {
         size="icon"
         variant="outline"
         onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-lg z-10"
+        className="absolute right-8 top-1/2 -translate-y-1/2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-xl border-2 border-white/50 z-10"
         data-testid="button-carousel-next"
         aria-label="Next slide"
       >
@@ -259,15 +259,15 @@ function ImageCarousel({ images, title }: CarouselProps) {
       </Button>
 
       {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-6" data-testid="carousel-dots">
+      <div className="flex justify-center gap-2 mt-8" data-testid="carousel-dots">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-2.5 rounded-full transition-all duration-300 ${
               index === selectedIndex
-                ? 'bg-primary w-8'
-                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 w-2'
+                ? 'bg-primary w-10 shadow-md'
+                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 w-2.5'
             }`}
             data-testid={`carousel-dot-${index}`}
             aria-label={`Go to slide ${index + 1}`}
