@@ -13,6 +13,7 @@ import GalleryPage from "@/pages/gallery";
 import Contact from "@/pages/contact";
 import Feedback from "@/pages/feedback";
 import SectorPage from "@/pages/sector";
+import CampaignPage from "@/pages/campaign";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/feedback" component={Feedback} />
       <Route path="/sectors/:sector" component={SectorPage} />
+      <Route path="/campaigns/:campaignId" component={CampaignPage} />
       <Route component={NotFound} />
     </Switch>
   );
