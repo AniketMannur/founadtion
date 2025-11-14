@@ -45,11 +45,11 @@ export function ModernNavigation() {
       label: "We Work In",
       subLinks: [
         { href: "/sectors/education", label: " Education" },
-        { href: "/sectors/health", label: "Healthcare " },
+        { href: "/sectors/health", label: "Health" },
         { href: "/sectors/women-empowerment", label: "Women Empowerment" },
         { href: "/sectors/community-development", label: "Community Development" },
         { href: "/sectors/skill-development", label: "Skill Development" },
-        { href: "/sectors/environment-conservation", label: "Environmental Initiatives" },
+        { href: "/sectors/environment-conservation", label: "Environmental Conservation" },
       ],
     },
     { href: "/gallery", label: "Gallery" },

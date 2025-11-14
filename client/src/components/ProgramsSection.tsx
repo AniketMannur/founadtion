@@ -7,7 +7,7 @@ export function ProgramsSection() {
   const programs = [
     {
       icon: GraduationCap,
-      title: "Education Support",
+      title: "Education ",
       description:
         "Providing quality education, scholarships, and learning resources to children from underprivileged backgrounds.",
       color: "from-blue-500 to-blue-600",
@@ -15,7 +15,7 @@ export function ProgramsSection() {
     },
     {
       icon: Heart,
-      title: "Healthcare Services",
+      title: "Health",
       description:
         "Free medical camps, health checkups, and access to essential healthcare services for rural communities.",
       color: "from-red-500 to-red-600",
